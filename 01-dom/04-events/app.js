@@ -26,12 +26,12 @@ function onClick(e) {
   val = e.timeStamp;
 
   // Coords event relative to the window
-  val = e.clientY;
-  val = e.clientX;
+  // val = e.clientY;
+  // val = e.clientX;
 
   // Coords event relative to the element
-  val = e.offsetY;
-  val = e.offsetX;
+  // val = e.offsetY;
+  // val = e.offsetX;
 
   console.log(val);
 }

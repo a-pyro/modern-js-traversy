@@ -13,22 +13,24 @@ function Person(firstName, lastName, dob) {
   // }
 }
 
+// & sposto i metodi nel prototipo poichè sono comuni a tutte le persone
 // Calculate age
-Person.prototype.calculateAge = function(){
-  const diff =  Date.now() - this.birthday.getTime();
+Person.prototype.calculateAge = function () {
+  const diff = Date.now() - this.birthday.getTime();
   const ageDate = new Date(diff);
   return Math.abs(ageDate.getUTCFullYear() - 1970);
-}
+};
 
 // Get full name
-Person.prototype.getFullName = function(){
+Person.prototype.getFullName = function () {
   return `${this.firstName} ${this.lastName}`;
-}
+};
 
+// & setto una proprietà dell'oggetto
 // Gets Married
-Person.prototype.getsMaried = function(newLastName){
+Person.prototype.getsMaried = function (newLastName) {
   this.lastName = newLastName;
-}
+};
 
 const john = new Person('John', 'Doe', '8-12-90');
 const mary = new Person('Mary', 'Johnson', 'March 20 1978');

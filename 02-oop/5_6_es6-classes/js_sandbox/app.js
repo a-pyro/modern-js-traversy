@@ -1,10 +1,13 @@
 class Person {
+  //  nel constructor metto le proprietà
   constructor(firstName, lastName, dob) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthday = new Date(dob);
   }
 
+  // qua metto direttamente i metodi
+  // i metodi aggiunti nella classe vengono aggiunti direttamente al prototype
   greeting() {
     return `Hello there ${this.firstName} ${this.lastName}`;
   }
@@ -19,6 +22,8 @@ class Person {
     this.lastName = newLastName;
   }
 
+  // STATIC METHOTDS:
+  // accessibile direttamente senza instantiare l'oggetto! tipo Math.random()
   static addNumbers(x, y) {
     return x + y;
   }
@@ -30,4 +35,4 @@ mary.getsMarried('Thompson');
 
 console.log(mary);
 
-console.log(Person.addNumbers(1,2));
+console.log(Person.addNumbers(1, 2));

@@ -1,5 +1,5 @@
 class Person {
-  //  nel constructor metto le proprietà
+  //  nel constructor metto le proprietà 🛠
   constructor(firstName, lastName, dob) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -7,7 +7,7 @@ class Person {
   }
 
   // qua metto direttamente i metodi
-  // i metodi aggiunti nella classe vengono aggiunti direttamente al prototype
+  // i metodi aggiunti nella classe vengono aggiunti direttamente al prototype 🤖
   greeting() {
     return `Hello there ${this.firstName} ${this.lastName}`;
   }

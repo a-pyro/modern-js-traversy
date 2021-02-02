@@ -1,3 +1,5 @@
+// Inheritance nelle classi
+
 class Person {
   constructor(firstName, lastName) {
     this.firstName = firstName;
@@ -8,11 +10,12 @@ class Person {
     return `Hello there ${this.firstName} ${this.lastName}`;
   }
 }
+console.log(Person);
 
-// classe child estende classe parente
+// classe child 🧒🏻 estende classe parente 👴🏻
 class Customer extends Person {
   constructor(firstName, lastName, phone, membership) {
-    super(firstName, lastName); // chiama il constructor della classe parente
+    super(firstName, lastName); // 🦸🏻‍♂️ chiama il constructor della classe parente
 
     // qui vanno le prop della classe child
     this.phone = phone;
@@ -25,6 +28,7 @@ class Customer extends Person {
   }
 
   // statici sono accessibili solo dal constructor/classe child che estende
+  // non dalle istanze! 🛑
   static getMembershipCost() {
     return 500;
   }

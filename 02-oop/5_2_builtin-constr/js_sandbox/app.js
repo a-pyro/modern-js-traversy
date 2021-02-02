@@ -43,3 +43,6 @@ const re1 = /\w+/;
 const re2 = new RegExp('\\w+');
 
 console.log(re2);
+const arrazzo = Array(4);
+console.log(arrazzo);
+console.log(arr1);

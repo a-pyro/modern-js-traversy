@@ -25,7 +25,6 @@ function loadData() {
     //gestire errori
     console.log(e);
   };
-
   xhr.send();
 }
 

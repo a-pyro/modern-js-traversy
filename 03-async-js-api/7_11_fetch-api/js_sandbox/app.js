@@ -4,57 +4,56 @@ document.getElementById('button2').addEventListener('click', getJson);
 
 document.getElementById('button3').addEventListener('click', getExternal);
 
-// Get local text file data
 function getText() {
   fetch('test.txt')
-    .then(function(res){
-      return res.text();
-    })
-    .then(function(data) {
-      console.log(data);
-      document.getElementById('output').innerHTML = data;
-    })
-    .catch(function(err){
-      console.log(err);
-    });
+    .then((res) => res.text())
+    .then(
+      (data) =>
+        (document.getElementById(
+          'output'
+        ).innerHTML = `<p class="animate__animated animate__bounceInLeft">${data}</p>`)
+    )
+
+    .catch((err) => console.log(err));
 }
 
-
-// Get local json data
 function getJson() {
   fetch('posts.json')
-    .then(function(res){
-      return res.json();
-    })
-    .then(function(data) {
-      console.log(data);
-      let output = '';
-      data.forEach(function(post) {
-        output += `<li>${post.title}</li>`;
+    .then((res) => res.json())
+    .then((data) => {
+      document.querySelector('#output').innerHTML = '';
+
+      data.forEach((post, idx) => {
+        let html = `<li class="animate__animated animate__bounceInLeft animate__delay-${
+          idx + 1
+        }s">${post.title}
+                      <p>${post.body}</p>
+                    </li>
+        `;
+        document.querySelector('#output').insertAdjacentHTML('beforeend', html);
       });
-      document.getElementById('output').innerHTML = output;
     })
-    .catch(function(err){
-      console.log(err);
-    });
+    .catch((err) => console.log(err));
 }
 
-
-// Get from external API
 function getExternal() {
   fetch('https://api.github.com/users')
-    .then(function(res){
-      return res.json();
-    })
-    .then(function(data) {
+    .then((res) => res.json())
+    .then((data) => {
+      document.querySelector('#output').innerHTML = '';
       console.log(data);
-      let output = '';
-      data.forEach(function(user) {
-        output += `<li>${user.login}</li>`;
+      data.forEach((user, idx) => {
+        let html = `<figure class="animate__animated animate__bounceInLeft animate__delay-${
+          idx + 1
+        }s">
+                        <img src="${
+                          user.avatar_url
+                        }" alt="Trulli" style="width:100%">
+                        <figcaption>${user.login}</figcaption>
+                    </figure>
+        `;
+        document.querySelector('#output').insertAdjacentHTML('beforeend', html);
       });
-      document.getElementById('output').innerHTML = output;
     })
-    .catch(function(err){
-      console.log(err);
-    });
+    .catch((err) => console.log(err));
 }

@@ -1,4 +1,5 @@
 const http = new easyHTTP();
+//Fixes spaces, new lines created by hitting enter and tabs from code editor
 
 //prendi i post
 /* http.get(
@@ -12,6 +13,7 @@ const http = new easyHTTP();
   }
 ); */
 
+bla();
 //post request
 const data = {
   title: 'custom post',

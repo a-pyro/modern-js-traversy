@@ -43,9 +43,9 @@ function getExternal() {
       document.querySelector('#output').innerHTML = '';
       console.log(data);
       data.forEach((user, idx) => {
-        let html = `<figure class="animate__animated animate__bounceInLeft animate__delay-${
-          idx + 1
-        }s">
+        let html = `<figure class="animate__animated animate__bounceIn${
+          idx % 2 === 0 ? 'Left' : 'Right'
+        } animate__delay-${idx + 1}s">
                         <img src="${
                           user.avatar_url
                         }" alt="Trulli" style="width:100%">
@@ -56,4 +56,10 @@ function getExternal() {
       });
     })
     .catch((err) => console.log(err));
+}
+
+function fucktorial (n, total = 0) {
+if (n===1) return
+
+ return  fucktorial(n -1, total +n )
 }

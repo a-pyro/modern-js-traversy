@@ -6,13 +6,13 @@ function easyHTTP() {
 easyHTTP.prototype.get = function (url, callback) {
   this.http.open('GET', url, true);
 
-  const self = this;
+  // const self = this;
   this.http.onload = function () {
-    if (self.http.status === 200) {
-      // console.log(self.http.responseText);
-      callback(null, self.http.responseText);
+    if (this.http.status === 200) {
+      // console.log(this.http.responseText);
+      callback(null, this.http.responseText);
     } else {
-      callback('Error: ' + self.http.status);
+      callback('Error: ' + this.http.status);
     }
   };
 

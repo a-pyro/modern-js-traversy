@@ -2,7 +2,7 @@ const http = new easyHTTP();
 //Fixes spaces, new lines created by hitting enter and tabs from code editor
 
 //prendi i post
-/* http.get(
+http.get(
   'https://jsonplaceholder.typicode.com/posts',
   function (err, response) {
     if (err) {
@@ -11,9 +11,8 @@ const http = new easyHTTP();
       console.log(response);
     }
   }
-); */
+);
 
-bla();
 //post request
 const data = {
   title: 'custom post',
@@ -45,7 +44,7 @@ const data = {
   }
 ); */
 
-http.delete(
+/* http.delete(
   'https://jsonplaceholder.typicode.com/posts/1',
   function (err, response) {
     if (err) {
@@ -54,4 +53,4 @@ http.delete(
       console.log(response);
     }
   }
-);
+); */
